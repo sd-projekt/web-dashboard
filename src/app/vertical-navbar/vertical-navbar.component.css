@@ -9,9 +9,10 @@
 /* Gruppe aller Divs in der Navbar */
 .flex-box {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Zentriert die Elemente */
-  align-content: space-around; /* Platz zwischen den Elementen */
+  flex-wrap: nowrap;
+  justify-content: space-evenly; /* Zentriert die Elemente */
+  align-content: center; /* Platz zwischen den Elementen */
+  flex-direction: column;
   height: 100vh;
 }
 

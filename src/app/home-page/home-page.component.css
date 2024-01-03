@@ -25,8 +25,10 @@
 
 /* Einstellungen für alle Widgets */
 .widget {
-  border-radius: 2vh;
-  background-color: rgb(24,27,32);
+  border-radius: 53px;
+  background: #181b20;
+  box-shadow:  15px 15px 54px #121418,
+              -15px -15px 54px #1e2228;
 }
 
 /* Text in den Widgets */
