@@ -44,10 +44,18 @@
     <h2 *ngIf="system_language == 'de'">Geschwindigkeit</h2>
     <h2 *ngIf="system_language == 'en'">Velocity</h2>
     <!--<canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height:'360px'}" (chartInstance)="getChartInstance($event)"></canvasjs-chart>-->
+    <h1>FR: {{velocityFR.value}} {{velocityFR.unit}}</h1>
+    <h1>FL: {{velocityFL.value}} {{velocityFL.unit}}</h1>
+    <h1>RR: {{velocityRR.value}} {{velocityRR.unit}}</h1>
+    <h1>RL: {{velocityRL.value}} {{velocityRL.unit}}</h1>
   </div>
   <div class="widget-2 widget flex-box">
     <h2 *ngIf="system_language == 'de'">Beschleunigung</h2>
     <h2 *ngIf="system_language == 'en'">Acceleration</h2>
+    <h1>FR: {{accelerationFR.value}} {{accelerationFR.unit}}</h1>
+    <h1>FL: {{accelerationFL.value}} {{accelerationFL.unit}}</h1>
+    <h1>RR: {{accelerationRR.value}} {{accelerationRR.unit}}</h1>
+    <h1>RL: {{accelerationRL.value}} {{accelerationRL.unit}}</h1>
   </div>
   <div class="widget-3 widget flex-box">
     <h2 *ngIf="system_language == 'de'">Lenkrad</h2>

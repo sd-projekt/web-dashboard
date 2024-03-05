@@ -1,22 +1,22 @@
 <div class="grid">
   <div class="widget-1 widget flex-box">
     <h2>Spannung HV-Akku</h2>
-    <h1>BATTERY</h1>
+    <h1>{{voltageHV.value}} {{voltageHV.unit}}</h1>
   </div>
   <div class="widget-2 widget flex-box">
     <h2>Spannung LV-Akku</h2>
-    <h1>BATTERY</h1>
+    <h1>{{voltageLV.value}} {{voltageLV.unit}}</h1>
   </div>
   <div class="widget-3 widget flex-box">
     <h2>Strom HV-Akku</h2>
-    <h1>BATTERY</h1>
+    <h1>{{currentHV.value}} {{currentHV.unit}}</h1>
   </div>
   <div class="widget-4 widget flex-box">
     <h2>Zellspannung min.</h2>
-    <h1>BATTERY</h1>
+    <h1>{{lowestCellVoltage.value}} {{lowestCellVoltage.unit}}</h1>
   </div>
   <div class="widget-5 widget flex-box">
-    <h2>Zellspannung max.</h2>
-    <h1>BATTERY</h1>
+    <h2>Schaltzustand Schütz</h2>
+    <h1>{{contactorState}}</h1>
   </div>
 </div>
