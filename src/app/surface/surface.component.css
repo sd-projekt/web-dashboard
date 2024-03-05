@@ -1,0 +1,69 @@
+/* All areas use this stylesheet file to generate an uniformly design */
+
+/* Every element on the surface */
+#surface {
+  margin-left: 10vw; /* Abstand zur Navigationsleiste */
+  width: 90vw;
+  height: 100vh;
+  background-color: rgb(18,19,24);
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Settings for the widgets in the areas */
+.widget {
+  border-radius: 53px;
+  background: #333333;
+  box-shadow:  15px 15px 54px #121418,
+  -15px -15px 54px #1e2228;
+  padding: 1vw;
+  justify-self: auto;
+  word-wrap: anywhere;
+}
+
+/* Necessary to center and adjust all items vertically */
+.flex-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Text inside the widgets */
+p {
+  color: white;
+  text-align: center;
+  font-family: Bahnschrift, serif;
+}
+
+/* Largest headline, used for values */
+h1, select {
+  font-family: Bahnschrift, serif;
+  text-align: center;
+  font-size: 1.4em;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Large headline, used for titles */
+h1, h2{
+  color: white;
+}
+
+h2 {
+  font-family: Bahnschrift, serif;
+  text-align: center;
+  font-size: 1.0em;
+}
+
+/* Used to style URLs */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+select {
+  display: block;
+  margin: 0 auto;
+  font-family: Bahnschrift, serif;
+  border-radius: 10px;
+}

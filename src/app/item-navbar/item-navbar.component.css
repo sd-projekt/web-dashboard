@@ -1,0 +1,15 @@
+/* Größe der Bilder */
+img {
+  /* Größenangaben, damit Bilder die ganze Größe des Divs ausfüllen*/
+  height: 100%;
+  width: 100%;
+}
+
+h2 {
+  color: white;
+  font-family: Bahnschrift, serif;
+  text-align: center;
+  font-size: 0.6em;
+  margin-top: -5px;
+}
+

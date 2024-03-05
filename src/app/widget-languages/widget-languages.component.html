@@ -1,0 +1,8 @@
+<select (change)="clickLanguages($event)" *ngIf="system_language == 'de'">
+  <option value="{{option.code}}" *ngFor="let option of languages_de">{{option.language}}</option>
+</select>
+
+
+<select (change)="clickLanguages($event)" *ngIf="system_language == 'en'">
+  <option value="{{option.code}}" *ngFor="let option of languages_en">{{option.language}}</option>
+</select>

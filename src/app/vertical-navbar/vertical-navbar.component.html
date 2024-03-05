@@ -1,28 +1,22 @@
 <div id="navigation_bar">
   <div class="flex-box">
     <div class="menu_item">
-      <!-- Logo -->
-      <img class="image" src="assets/images/logo.png" alt="Logo OWL Racing-Team">
+      <app-item-navbar [menuState]="menuState" [navbar_entry]="nav_logo" (click)="clickNavItem()" (eventnavClicked)="menuState=$event"></app-item-navbar>
     </div>
     <div class="menu_item option">
-      <!-- Home -->
-      <img class="image" src="assets/images/home.svg" alt="Home">
+      <app-item-navbar [menuState]="menuState" [navbar_entry]="nav_home" (click)="clickNavItem()" (eventnavClicked)="menuState=$event"></app-item-navbar>
     </div>
     <div class="menu_item option">
-      <!-- Battery -->
-      <img class="image" src="assets/images/battery.svg" alt="Battery">
+      <app-item-navbar [menuState]="menuState" [navbar_entry]="nav_battery" (click)="clickNavItem()" (eventnavClicked)="menuState=$event"></app-item-navbar>
     </div>
     <div class="menu_item option">
-      <!-- Motor -->
-      <img class="image" src="assets/images/motor.svg" alt="Motor">
+      <app-item-navbar [menuState]="menuState" [navbar_entry]="nav_motor" (click)="clickNavItem()" (eventnavClicked)="menuState=$event"></app-item-navbar>
     </div>
     <div class="menu_item option">
-      <!-- Controller -->
-      <img class="image" src="assets/images/controller.svg" alt="Controller">
+      <app-item-navbar [menuState]="menuState" [navbar_entry]="nav_controller" (click)="clickNavItem()" (eventnavClicked)="menuState=$event"></app-item-navbar>
     </div>
     <div class="menu_item option">
-      <!-- Settings -->
-      <img class="image" src="assets/images/settings.svg" alt="Settings">
+      <app-item-navbar [menuState]="menuState" [navbar_entry]="nav_settings" (click)="clickNavItem()" (eventnavClicked)="menuState=$event"></app-item-navbar>
     </div>
   </div>
 </div>

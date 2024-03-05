@@ -1,0 +1,40 @@
+/* Grid settings, individual for each area */
+.grid {
+  margin-top: 5vh;
+  width: 85vw;
+  height: 90vh;
+  display: grid;
+  column-gap: 2vw;
+  row-gap: 4vh;
+  grid-template-areas:
+    "eins eins eins zwei zwei zwei"
+    "eins eins eins zwei zwei zwei"
+    "eins eins eins zwei zwei zwei"
+    "drei vier vier fuenf fuenf sechs"
+}
+/* Assignment of wdigets to the grid*/
+.widget-1 {
+  grid-area: eins;
+}
+
+.widget-2 {
+  grid-area: zwei
+}
+
+.widget-3 {
+  grid-area: drei;
+}
+
+.widget-4 {
+  grid-area: vier;
+}
+
+.widget-5 {
+  grid-area: fuenf;
+}
+
+.widget-6 {
+  grid-area: sechs;
+}
+
+

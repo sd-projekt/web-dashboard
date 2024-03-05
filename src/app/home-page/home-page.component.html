@@ -1,11 +1,3 @@
-<app-vertical-navbar></app-vertical-navbar>
-<div class="surface">
-  <div class="grid">
-    <div class="widget-1 widget"><p>Lenkradwinkel</p></div>
-    <div class="widget-2 widget"><p>Beschleunigung</p></div>
-    <div class="widget-3 widget"><p>Geschwindigkeit</p></div>
-    <div class="widget-4 widget"><p>Position Gaspedal</p></div>
-    <div class="widget-5 widget"><p>Position Bremspedal</p></div>
-    <div class="widget-6 widget"><p>Fahrzeug-Telemetrie</p></div>
-  </div>
-</div>
+<!-- Load the vertical navigation bar and the surface component -->
+<app-vertical-navbar (eventNavClicked)="posNavigation=$event"></app-vertical-navbar>
+<app-surface [nav_pointer]="posNavigation"></app-surface>

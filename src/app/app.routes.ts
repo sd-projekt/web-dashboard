@@ -6,7 +6,7 @@ export const routes: Routes = [
   {
     path: '',
     component: HomePageComponent,
-    title: 'Fahrzeugübersicht'
+    title: 'Dashboard OWL Racing-Team'
   },
   {
     path: '**',

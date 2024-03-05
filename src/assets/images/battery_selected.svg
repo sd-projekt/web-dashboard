@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="1080" viewBox="0 0 1080 1080" xml:space="preserve">
+<desc fill="#000000">Created with Fabric.js 5.2.4</desc>
+<defs fill="#000000">
+</defs>
+<g transform="matrix(1 0 0 1 540 540)" id="28ebde8d-6a09-4c43-8f42-535734871fa9">
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill:#ff0000; fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke" x="-540" y="-540" rx="0" ry="0" width="1080" height="1080"/>
+</g>
+<g transform="matrix(1 0 0 1 540 540)" id="c545de92-08a3-4aae-8fb8-8b0dc3f52a58">
+</g>
+<g transform="matrix(1 0 0 1 540 540)" id="20499055-fcba-45ce-b03f-b5ca43428bc1">
+<path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill:#ff0000; fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-540, 480)" d="M 320 -80 Q 303 -80 291.5 -91.5 Q 280 -103 280 -120 L 280 -760 Q 280 -777 291.5 -788.5 Q 303 -800 320 -800 L 400 -800 L 400 -880 L 560 -880 L 560 -800 L 640 -800 Q 657 -800 668.5 -788.5 Q 680 -777 680 -760 L 680 -480 Q 580 -479 510 -409.5 Q 440 -340 440 -240 Q 440 -194 456 -153 Q 472 -112 501 -80 L 320 -80 Z M 360 -480 L 600 -480 L 600 -720 L 360 -720 L 360 -480 Z M 660 -80 L 660 -200 L 560 -200 L 700 -400 L 700 -280 L 800 -280 L 660 -80 Z" stroke-linecap="round"/>
+</g>
+</svg>

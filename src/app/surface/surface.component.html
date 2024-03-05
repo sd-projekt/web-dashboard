@@ -1,0 +1,10 @@
+<!-- Load only the area which was selected on the verticla navigation bar -->
+<div id="surface" [ngSwitch]="nav_pointer">
+  <app-area-logo [system_language]="systemLanguage"  *ngSwitchCase="'Logo'"></app-area-logo>
+  <app-area-home [system_language]="systemLanguage" *ngSwitchCase="'Home'"></app-area-home>
+  <app-area-battery [system_language]="systemLanguage" *ngSwitchCase="'Battery'"></app-area-battery>
+  <app-area-motor [system_language]="systemLanguage" *ngSwitchCase="'Motor'"></app-area-motor>
+  <app-area-controller [system_language]="systemLanguage" *ngSwitchCase="'Controller'"></app-area-controller>
+  <app-area-settings [system_language]="systemLanguage" (change)="updateLanguage()" (eventLangChanged)="systemLanguage=$event" *ngSwitchCase="'Settings'"></app-area-settings>
+  <app-area-home [system_language]="systemLanguage" *ngSwitchDefault></app-area-home>
+</div>

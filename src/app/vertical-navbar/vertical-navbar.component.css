@@ -1,37 +1,30 @@
-/* Navigationsleiste (Gesamt)*/
+/* Vertical navigation bar*/
 #navigation_bar {
   background-color: black;
-  width: 10vw;
-  height: 100vh;
-  position: absolute;
+  width: 10vw; /* Beispielwert, passe dies an deine Bedürfnisse an */
+  min-height: 100vh;
+  position: fixed; /* Ändere von 'absolute' auf 'fixed' */
 }
 
-/* Gruppe aller Divs in der Navbar */
+/* Group of menu options inside the vertical navigation bar */
 .flex-box {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-evenly; /* Zentriert die Elemente */
-  align-content: center; /* Platz zwischen den Elementen */
+  align-items: center;
   flex-direction: column;
   height: 100vh;
 }
 
-/* Einträge in der Flex-Box */
+/* menu items (options) inside the vertical navigation bar */
 .menu_item {
   height: 8vw;
   width: 8vw;
 }
 
-/* Alle Einträge in der Navigationsleiste*/
+/* If menu item ist an option, but not an logo */
 .option {
   height: 4vw;
   width: 4vw;
   margin: 8px;
-}
-
-/* Größe der Bilder */
-.image {
-  /* Größenangaben, damit Bilder die ganze Größe des Divs ausfüllen*/
-  height: 100%;
-  width: 100%;
 }
