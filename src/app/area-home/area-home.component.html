@@ -60,12 +60,21 @@
   <div class="widget-3 widget flex-box">
     <h2 *ngIf="system_language == 'de'">Lenkrad</h2>
     <h2 *ngIf="system_language == 'en'">Steering wheel</h2>
-    <h1>HOME</h1>
+    <h1>{{steeringAngle.value}}{{steeringAngle.unit}}</h1>
   </div>
   <div class="widget-4 widget flex-box">
     <h2 *ngIf="system_language == 'de'">Pedale</h2>
     <h2 *ngIf="system_language == 'en'">Pedals</h2>
-    <h1>HOME</h1>
+    <h1 *ngIf="system_language == 'de'">Gas: {{accelerator.value}}{{accelerator.unit}}</h1>
+    <h1 *ngIf="system_language == 'en'">Accelerator: {{accelerator.value}}{{accelerator.unit}}</h1>
+    <div class="progress-container">
+      <div class="progress-indicator gas" style="width: {{accelerator.value}}{{accelerator.unit}}" ></div>
+    </div>
+    <h1 *ngIf="system_language == 'de'">Bremse: {{brake.value}}{{brake.unit}}</h1>
+    <h1 *ngIf="system_language == 'en'">Brake: {{brake.value}}{{brake.unit}}</h1>
+    <div class="progress-container">
+      <div class="progress-indicator brake" style="width: {{brake.value}}{{brake.unit}}" ></div>
+    </div>
   </div>
   <div class="widget-5 widget flex-box">
     <h2 *ngIf="system_language == 'de'">Stoßdämpfer</h2>
@@ -77,4 +86,5 @@
     <h2 *ngIf="system_language == 'en'">Main ECU</h2>
     <h1>HOME</h1>
   </div>
+
 </div>

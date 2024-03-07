@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, OnDestroy} from '@angular/core';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {interval, Subscription} from "rxjs";
 import {DisplayValueModel} from "../models/display-value.model";
@@ -12,12 +12,25 @@ import {DisplayValueModel} from "../models/display-value.model";
     './area-battery.component.css',
     '../surface/surface.component.css'
   ]})
-export class AreaBatteryComponent implements OnInit{
+export class AreaBatteryComponent implements OnInit, OnDestroy{
   @Input() system_language : string = '';
-  voltageHV: DisplayValueModel;
-  currentHV: DisplayValueModel;
-  voltageLV: DisplayValueModel;
-  lowestCellVoltage: DisplayValueModel;
+
+  voltageHV: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
+  currentHV: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
+  voltageLV: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
+  lowestCellVoltage: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
   contactorState: string = "Closed";
 
   subscriptionTimer: Subscription;
@@ -31,6 +44,10 @@ export class AreaBatteryComponent implements OnInit{
 
   ngOnInit() {
     this.update_values()
+  }
+
+  ngOnDestroy() {
+    this.subscriptionTimer.unsubscribe();
   }
 
   update_values() {

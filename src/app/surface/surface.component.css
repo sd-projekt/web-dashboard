@@ -14,12 +14,12 @@
 .widget {
   border-radius: 53px;
   background: #333333;
-  box-shadow:  15px 15px 54px #121418,
-  -15px -15px 54px #1e2228;
   padding: 1vw;
   justify-self: auto;
   word-wrap: anywhere;
+  transition: width 1s ease-in-out, height 1s ease-in-out;
 }
+/* Transition for smooth adjusting of widget size */
 
 /* Necessary to center and adjust all items vertically */
 .flex-box {

@@ -1,9 +1,8 @@
-import {Component, EventEmitter, Input, Output, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, Output, OnInit, OnDestroy} from '@angular/core';
 import {NgIf} from "@angular/common";
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {interval, Subscription} from "rxjs";
 import {DisplayValueModel} from "../models/display-value.model";
-
 
 @Component({
   selector: 'app-area-home',
@@ -17,19 +16,58 @@ import {DisplayValueModel} from "../models/display-value.model";
     '../surface/surface.component.css'
   ]
 })
-export class AreaHomeComponent implements OnInit{
+export class AreaHomeComponent implements OnInit, OnDestroy{
 
   // Get data from parent (surface component)
   @Input() system_language : string = '';
-  velocityFR: DisplayValueModel;
-  velocityFL: DisplayValueModel;
-  velocityRR: DisplayValueModel;
-  velocityRL: DisplayValueModel;
+  velocityFR: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
+  velocityFL: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
+  velocityRR: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
+  velocityRL: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
 
-  accelerationFR: DisplayValueModel;
-  accelerationFL: DisplayValueModel;
-  accelerationRR: DisplayValueModel;
-  accelerationRL: DisplayValueModel;
+  accelerationFR: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
+  accelerationFL: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
+  accelerationRR: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
+  accelerationRL: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
+
+  accelerator: DisplayValueModel = {
+    value: 0,
+    unit: "%"
+  };
+
+  brake: DisplayValueModel = {
+    value: 0,
+    unit: "%"
+  };
+
+  steeringAngle: DisplayValueModel = {
+    value: 0,
+    unit: "°"
+  };
 
   subscriptionTimer : Subscription;
   // Intervall to update the current time, in milliseconds
@@ -44,6 +82,9 @@ export class AreaHomeComponent implements OnInit{
     this.update_values();
   }
 
+  ngOnDestroy() {
+    this.subscriptionTimer.unsubscribe();
+  }
 
   update_values() {
     var ApiPathBase = "http://localhost:8000/data/"
@@ -116,6 +157,33 @@ export class AreaHomeComponent implements OnInit{
       (response: any) => {
         this.accelerationRL = {
           value: response.value,
+          unit: response.unit
+        };
+      }
+    );
+
+    this.http.get(ApiPathBase + "pedals/accelerator").subscribe(
+      (response: any) => {
+        this.accelerator = {
+          value: Math.round(response.value),
+          unit: response.unit
+        };
+      }
+    );
+
+    this.http.get(ApiPathBase + "pedals/brake").subscribe(
+      (response: any) => {
+        this.brake = {
+          value: Math.round(response.value),
+          unit: response.unit
+        };
+      }
+    );
+
+    this.http.get(ApiPathBase + "steering_angle/value").subscribe(
+      (response: any) => {
+        this.steeringAngle = {
+          value: Math.round(response.value),
           unit: response.unit
         };
       }
