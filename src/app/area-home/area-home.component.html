@@ -79,12 +79,15 @@
   <div class="widget-5 widget flex-box">
     <h2 *ngIf="system_language == 'de'">Stoßdämpfer</h2>
     <h2 *ngIf="system_language == 'en'">Shock absorber</h2>
-    <h1>HOME</h1>
+    <h1>FR: {{shockAbsorberFR.value}} {{shockAbsorberFR.unit}}</h1>
+    <h1>FL: {{shockAbsorberFL.value}} {{shockAbsorberFL.unit}}</h1>
+    <h1>RR: {{shockAbsorberRR.value}} {{shockAbsorberRR.unit}}</h1>
+    <h1>RL: {{shockAbsorberRL.value}} {{shockAbsorberRL.unit}}</h1>
   </div>
   <div class="widget-6 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Main ECU</h2>
-    <h2 *ngIf="system_language == 'en'">Main ECU</h2>
-    <h1>HOME</h1>
+    <h2 *ngIf="system_language == 'de'">Main ECU Zustandsautomat</h2>
+    <h2 *ngIf="system_language == 'en'">Main ECU State Machine</h2>
+    <h1>{{ statemachineState.value }}</h1>
   </div>
 
 </div>

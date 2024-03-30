@@ -1,4 +1,5 @@
 import {Component, Input, OnInit, OnDestroy} from '@angular/core';
+import {NgIf} from "@angular/common";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {interval, Subscription} from "rxjs";
 import {DisplayValueModel} from "../models/display-value.model";
@@ -6,7 +7,7 @@ import {DisplayValueModel} from "../models/display-value.model";
 @Component({
   selector: 'app-area-battery',
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [HttpClientModule, NgIf],
   templateUrl: './area-battery.component.html',
   styleUrls: [
     './area-battery.component.css',

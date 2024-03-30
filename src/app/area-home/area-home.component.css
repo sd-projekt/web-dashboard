@@ -9,8 +9,7 @@
   grid-template-areas:
     "eins eins eins zwei zwei zwei"
     "eins eins eins zwei zwei zwei"
-    "eins eins eins zwei zwei zwei"
-    "drei vier vier fuenf fuenf sechs"
+    "vier vier fuenf fuenf drei sechs"
 }
 /* Assignment of wdigets to the grid*/
 .widget-1 {

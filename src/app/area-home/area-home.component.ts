@@ -69,6 +69,27 @@ export class AreaHomeComponent implements OnInit, OnDestroy{
     unit: "°"
   };
 
+  shockAbsorberFR: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
+  shockAbsorberFL: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
+  shockAbsorberRR: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
+  shockAbsorberRL: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
+  statemachineState: DisplayValueModel = {
+    value: "Loading",
+    unit: ""
+  };
+
   subscriptionTimer : Subscription;
   // Intervall to update the current time, in milliseconds
   timer = 1000;
@@ -186,6 +207,65 @@ export class AreaHomeComponent implements OnInit, OnDestroy{
           value: Math.round(response.value),
           unit: response.unit
         };
+      }
+    );
+
+    this.http.get(ApiPathBase + "spring_travel/value_fr").subscribe(
+      (response: any) => {
+        this.shockAbsorberFR = {
+          value: response.value,
+          unit: response.unit
+        };
+      }
+    );
+
+    this.http.get(ApiPathBase + "spring_travel/value_fl").subscribe(
+      (response: any) => {
+        this.shockAbsorberFL = {
+          value: response.value,
+          unit: response.unit
+        };
+      }
+    );
+
+    this.http.get(ApiPathBase + "spring_travel/value_rr").subscribe(
+      (response: any) => {
+        this.shockAbsorberRR = {
+          value: response.value,
+          unit: response.unit
+        };
+      }
+    );
+
+    this.http.get(ApiPathBase + "spring_travel/value_rl").subscribe(
+      (response: any) => {
+        this.shockAbsorberRL = {
+          value: response.value,
+          unit: response.unit
+        };
+      }
+    );
+
+    this.http.get(ApiPathBase + "drivecontroller/statemachine_state").subscribe(
+      (response: any) => {
+        var realValue = Math.round(response.value)
+
+        switch (realValue) {
+          case 0:
+            this.statemachineState.value = "SYSTEM_STOP"
+            break;
+          case 1:
+            this.statemachineState.value = "TS_PRECHARGE"
+            break;
+          case 2:
+            this.statemachineState.value = "TS_READY"
+            break;
+          case 3:
+            this.statemachineState.value = "TS_ACTIVE"
+            break;
+          default:
+            break;
+        }
       }
     );
   }

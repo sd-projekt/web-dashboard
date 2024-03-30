@@ -8,9 +8,9 @@
   row-gap: 4vh;
   grid-template-areas:
     "eins eins drei drei"
-  "eins eins fuenf fuenf"
+  "eins eins drei drei"
   "zwei zwei vier vier"
-  "zwei zwei vier vier";
+  "fuenf fuenf sechs sechs";
 }
 /* Assignment of wdigets to the grid*/
 .widget-1 {
@@ -31,4 +31,16 @@
 
 .widget-5 {
   grid-area: fuenf;
+}
+
+.widget-6 {
+  grid-area: sechs;
+}
+
+.no-error {
+  color: green;
+}
+
+.error {
+  color: red;
 }

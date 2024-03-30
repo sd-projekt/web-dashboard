@@ -1,22 +1,18 @@
 <div class="grid">
   <div class="widget-1 widget flex-box">
-    <h2>CONTROLLER</h2>
-    <h1>CONTROLLER</h1>
+    <h2 *ngIf="system_language == 'de'">Fehlerzustand System KEB C6</h2>
+    <h2 *ngIf="system_language == 'en'">Error state of system KEB C6</h2>
+    <h1 *ngIf="errorState.value == 0 && system_language == 'de'" class="no-error">Kein Fehler</h1>
+    <h1 *ngIf="errorState.value == 1 && system_language == 'de'" class="error" >Fehler</h1>
+    <h1 *ngIf="errorState.value == 0 && system_language == 'en'" class="no-error">No error</h1>
+    <h1 *ngIf="errorState.value == 1 && system_language == 'en'" class="error" >Error</h1>
   </div>
   <div class="widget-2 widget flex-box">
-    <h2>CONTROLLER</h2>
-    <h1>CONTROLLER</h1>
-  </div>
-  <div class="widget-3 widget flex-box">
-    <h2>CONTROLLER</h2>
-    <h1>CONTROLLER</h1>
-  </div>
-  <div class="widget-4 widget flex-box">
-    <h2>CONTROLLER</h2>
-    <h1>CONTROLLER</h1>
-  </div>
-  <div class="widget-5 widget flex-box">
-    <h2>CONTROLLER</h2>
-    <h1>CONTROLLER</h1>
+    <h2 *ngIf="system_language == 'de'">Fehlerzustand Regelung KEB C6</h2>
+    <h2 *ngIf="system_language == 'en'">Error state of control KEB C6</h2>
+    <h1 *ngIf="controlState.value == 0 && system_language == 'de'" class="no-error">Kein Fehler</h1>
+    <h1 *ngIf="controlState.value == 1 && system_language == 'de'" class="error" >Fehler</h1>
+    <h1 *ngIf="controlState.value == 0 && system_language == 'en'" class="no-error">No error</h1>
+    <h1 *ngIf="controlState.value == 1 && system_language == 'en'" class="error" >Error</h1>
   </div>
 </div>
