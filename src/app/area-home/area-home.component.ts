@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, Output, OnInit, OnDestroy} from '@angular/core';
 import {NgIf} from "@angular/common";
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {interval, Subscription} from "rxjs";
+import {delay, interval, Subscription} from "rxjs";
 import {DisplayValueModel} from "../models/display-value.model";
 
 @Component({
@@ -92,7 +92,7 @@ export class AreaHomeComponent implements OnInit, OnDestroy{
 
   subscriptionTimer : Subscription;
   // Intervall to update the current time, in milliseconds
-  timer = 1000;
+  timer = 2500;
 
   constructor(private http: HttpClient) {
     // Timer to update the current time in a regular interval, defined by the timer variable
@@ -105,6 +105,36 @@ export class AreaHomeComponent implements OnInit, OnDestroy{
 
   ngOnDestroy() {
     this.subscriptionTimer.unsubscribe();
+  }
+
+  startTSButton() {
+    const ApiPathUpdate = "http://localhost:8000/update_value/"
+    const ApiPathBase = "http://localhost:8000/data/"
+
+    const TS_PRECHARGE_DATA = {
+      "component": "drivecontroller",
+      "parameter": "statemachine_state",
+      "newValue": 1
+    }
+    const TS_READY_DATA = {
+      "component": "drivecontroller",
+      "parameter": "statemachine_state",
+      "newValue": 2
+    }
+    const TS_ACTIVE_DATA = {
+      "component": "drivecontroller",
+      "parameter": "statemachine_state",
+      "newValue": 3
+    }
+    //this.http.post(ApiPathUpdate, TS_PRECHARGE_DATA);
+    //this.get_statemachine_state()
+    //setTimeout(() => {console.log("READY"); this.http.post(ApiPathUpdate, TS_READY_DATA)}, 2000);
+    //this.get_statemachine_state()
+    //setTimeout(() => {console.log("ACTIVE"); this.http.post(ApiPathUpdate, TS_ACTIVE_DATA)}, 5000);
+    //this.get_statemachine_state()
+    this.http.post(ApiPathUpdate, TS_ACTIVE_DATA).subscribe((response: any) => {
+      console.log(response)
+    });
   }
 
   update_values() {
@@ -245,6 +275,33 @@ export class AreaHomeComponent implements OnInit, OnDestroy{
         };
       }
     );
+
+    this.http.get(ApiPathBase + "drivecontroller/statemachine_state").subscribe(
+      (response: any) => {
+        var realValue = Math.round(response.value)
+
+        switch (realValue) {
+          case 0:
+            this.statemachineState.value = "SYSTEM_STOP"
+            break;
+          case 1:
+            this.statemachineState.value = "TS_PRECHARGE"
+            break;
+          case 2:
+            this.statemachineState.value = "TS_READY"
+            break;
+          case 3:
+            this.statemachineState.value = "TS_ACTIVE"
+            break;
+          default:
+            break;
+        }
+      }
+    );
+  }
+
+  get_statemachine_state() {
+    var ApiPathBase = "http://localhost:8000/data/"
 
     this.http.get(ApiPathBase + "drivecontroller/statemachine_state").subscribe(
       (response: any) => {

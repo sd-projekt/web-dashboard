@@ -88,6 +88,8 @@
     <h2 *ngIf="system_language == 'de'">Main ECU Zustandsautomat</h2>
     <h2 *ngIf="system_language == 'en'">Main ECU State Machine</h2>
     <h1>{{ statemachineState.value }}</h1>
+
+    <button class="btn btn-danger" (click)="startTSButton()">TS START</button>
   </div>
 
 </div>
