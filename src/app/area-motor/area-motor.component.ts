@@ -3,12 +3,14 @@ import {NgIf} from "@angular/common";
 import {HttpClient} from '@angular/common/http';
 import {interval, Subscription} from "rxjs";
 import {DisplayValueModel} from "../models/display-value.model";
+import {WidgetChartScatterTemperatureComponent} from "../widget-chart-scatter-temperature/widget-chart-scatter-temperature.component";
+import {NgxGaugeModule} from "ngx-gauge";
 
 @Component({
   selector: 'app-area-motor',
   standalone: true,
   imports: [
-    NgIf
+    NgIf, WidgetChartScatterTemperatureComponent, NgxGaugeModule
   ],
   templateUrl: './area-motor.component.html',
   styleUrls: [
@@ -18,6 +20,12 @@ import {DisplayValueModel} from "../models/display-value.model";
 })
 export class AreaMotorComponent implements OnInit, OnDestroy{
   @Input() system_language : string = '';
+
+  thresholdConfig_temperature = {
+    '0': {color: 'green'},
+    '2500': {color: 'orange'},
+    '4000': {color: 'red'}
+  };
 
   // Display values (init value is always loading
   temperatureRight: DisplayValueModel = {

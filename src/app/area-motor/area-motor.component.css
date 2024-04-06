@@ -1,17 +1,41 @@
+.gauge-flex-box {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.vertical_flex-box {
+  display: flex;
+  justify-content: space-around;
+}
+
 /* Grid settings, individual for each area */
-.grid {
+.grid-total {
   margin-top: 5vh;
   width: 85vw;
   height: 90vh;
   display: grid;
   column-gap: 2vw;
   row-gap: 4vh;
+
   grid-template-areas:
-    "eins eins drei drei"
-  "eins eins drei drei"
-  "zwei zwei vier vier"
-  "fuenf fuenf sechs sechs";
+    "grid-group-1"
+    "grid-group-2";
 }
+
+.grid-group-1 {
+  display: grid;
+  column-gap: 2vw;
+  grid-template-areas: "eins zwei zwei";
+}
+
+.grid-group-2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2vw;
+  grid-template-areas: "drei vier fuenf sechs";
+}
+
 /* Assignment of wdigets to the grid*/
 .widget-1 {
   grid-area: eins;

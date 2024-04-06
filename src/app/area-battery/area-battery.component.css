@@ -1,16 +1,29 @@
 /* Grid settings, individual for each area */
-.grid {
+.grid-total {
   margin-top: 5vh;
   width: 85vw;
   height: 90vh;
   display: grid;
   column-gap: 2vw;
   row-gap: 4vh;
+
   grid-template-areas:
-    "eins drei zwei zwei"
-  "eins vier zwei zwei"
-  "eins vier fuenf fuenf"
-  "eins vier fuenf fuenf";
+    "grid-group-1"
+    "grid-group-2";
+}
+
+.grid-group-1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2vw;
+  grid-template-areas: "eins zwei drei";
+}
+
+.grid-group-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2vw;
+  grid-template-areas: "vier fuenf";
 }
 /* Assignment of wdigets to the grid*/
 .widget-1 {

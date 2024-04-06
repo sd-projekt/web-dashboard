@@ -1,95 +1,72 @@
-<!--<div class="grid">
-  <div class="widget-1 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Geschwindigkeit</h2>
-    <h2 *ngIf="system_language == 'en'">Velocity</h2>
-  </div>
-  <div class="widget-2 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Beschleunigung</h2>
-    <h2 *ngIf="system_language == 'en'">Acceleration</h2>
-  </div>
-  <div class="widget-3 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Position Stoßdämpfer 1-4</h2>
-    <h2 *ngIf="system_language == 'en'">Position shock absorber 1-4</h2>
-    <h1>HOME</h1>
-  </div>
-  <div class="widget-4 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Sensorik</h2>
-    <h2 *ngIf="system_language == 'en'">sensors</h2>
-    <h1>HOME</h1>
-  </div>
-  <div class="widget-7 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Position Gaspedal</h2>
-    <h2 *ngIf="system_language == 'en'">Position gas pedal</h2>
-    <h1>HOME</h1>
-  </div>
-  <div class="widget-8 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Position Bremspedal</h2>
-    <h2 *ngIf="system_language == 'en'">Position brake pedal</h2>
-    <h1>HOME</h1>
-  </div>
-  <div class="widget-9 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Lenrakdstellung</h2>
-    <h2 *ngIf="system_language == 'en'">Steering wheel position</h2>
-    <h1>HOME</h1>
-  </div>
-  <div class="widget-10 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Status Zustandsautomat</h2>
-    <h2 *ngIf="system_language == 'en'">Status state machine</h2>
-    <h1>HOME</h1>
-  </div>
-</div>-->
+<div class="grid-total">
+  <div class="grid-group-1">
+    <div class="widget-1 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Geschwindigkeit</h2>
+      <h2 *ngIf="system_language == 'en'">Velocity</h2>
 
-<div class="grid">
-  <div class="widget-1 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Geschwindigkeit</h2>
-    <h2 *ngIf="system_language == 'en'">Velocity</h2>
-    <!--<canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height:'360px'}" (chartInstance)="getChartInstance($event)"></canvasjs-chart>-->
-    <h1>FR: {{velocityFR.value}} {{velocityFR.unit}}</h1>
-    <h1>FL: {{velocityFL.value}} {{velocityFL.unit}}</h1>
-    <h1>RR: {{velocityRR.value}} {{velocityRR.unit}}</h1>
-    <h1>RL: {{velocityRL.value}} {{velocityRL.unit}}</h1>
-  </div>
-  <div class="widget-2 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Beschleunigung</h2>
-    <h2 *ngIf="system_language == 'en'">Acceleration</h2>
-    <h1>FR: {{accelerationFR.value}} {{accelerationFR.unit}}</h1>
-    <h1>FL: {{accelerationFL.value}} {{accelerationFL.unit}}</h1>
-    <h1>RR: {{accelerationRR.value}} {{accelerationRR.unit}}</h1>
-    <h1>RL: {{accelerationRL.value}} {{accelerationRL.unit}}</h1>
-  </div>
-  <div class="widget-3 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Lenkrad</h2>
-    <h2 *ngIf="system_language == 'en'">Steering wheel</h2>
-    <h1>{{steeringAngle.value}}{{steeringAngle.unit}}</h1>
-  </div>
-  <div class="widget-4 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Pedale</h2>
-    <h2 *ngIf="system_language == 'en'">Pedals</h2>
-    <h1 *ngIf="system_language == 'de'">Gas: {{accelerator.value}}{{accelerator.unit}}</h1>
-    <h1 *ngIf="system_language == 'en'">Accelerator: {{accelerator.value}}{{accelerator.unit}}</h1>
-    <div class="progress-container">
-      <div class="progress-indicator gas" style="width: {{accelerator.value}}{{accelerator.unit}}" ></div>
+      <app-widget-chart-line-velocity></app-widget-chart-line-velocity>
+      <!-- <h1>FR: {{velocityFR.value}} {{velocityFR.unit}}</h1>
+      <h1>FL: {{velocityFL.value}} {{velocityFL.unit}}</h1>
+      <h1>RR: {{velocityRR.value}} {{velocityRR.unit}}</h1>
+      <h1>RL: {{velocityRL.value}} {{velocityRL.unit}}</h1> -->
     </div>
-    <h1 *ngIf="system_language == 'de'">Bremse: {{brake.value}}{{brake.unit}}</h1>
-    <h1 *ngIf="system_language == 'en'">Brake: {{brake.value}}{{brake.unit}}</h1>
-    <div class="progress-container">
-      <div class="progress-indicator brake" style="width: {{brake.value}}{{brake.unit}}" ></div>
+    <div class="widget-2 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Beschleunigung</h2>
+      <h2 *ngIf="system_language == 'en'">Acceleration</h2>
+
+      <app-widget-chart-line-acceleration></app-widget-chart-line-acceleration>
+      <!--
+      <h1>FR: {{accelerationFR.value}} {{accelerationFR.unit}}</h1>
+      <h1>FL: {{accelerationFL.value}} {{accelerationFL.unit}}</h1>
+      <h1>RR: {{accelerationRR.value}} {{accelerationRR.unit}}</h1>
+      <h1>RL: {{accelerationRL.value}} {{accelerationRL.unit}}</h1>
+      -->
     </div>
   </div>
-  <div class="widget-5 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Stoßdämpfer</h2>
-    <h2 *ngIf="system_language == 'en'">Shock absorber</h2>
-    <h1>FR: {{shockAbsorberFR.value}} {{shockAbsorberFR.unit}}</h1>
-    <h1>FL: {{shockAbsorberFL.value}} {{shockAbsorberFL.unit}}</h1>
-    <h1>RR: {{shockAbsorberRR.value}} {{shockAbsorberRR.unit}}</h1>
-    <h1>RL: {{shockAbsorberRL.value}} {{shockAbsorberRL.unit}}</h1>
-  </div>
-  <div class="widget-6 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Main ECU Zustandsautomat</h2>
-    <h2 *ngIf="system_language == 'en'">Main ECU State Machine</h2>
-    <h1>{{ statemachineState.value }}</h1>
+  <div class="grid-group-2">
+    <div class="widget-3 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Lenkrad</h2>
+      <h2 *ngIf="system_language == 'en'">Steering wheel</h2>
+      <div class="gauge-flex-box">
+        <div>
+          <ngx-gauge [size]="250" [margin]="10" [type]="'arch'" [label]="'Winkel'" [thick]="25" [min]="0" [max]="360"  [append]="steeringAngle.unit" [value]="steeringAngle.value" [thresholds]="thresholdConfig_steering_wheel"></ngx-gauge>
+        </div>
+      </div>
+    </div>
 
-    <button class="btn btn-danger" (click)="startTSButton()">TS START</button>
-  </div>
+    <div class="widget-4 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Pedale</h2>
+      <h2 *ngIf="system_language == 'en'">Pedals</h2>
+      <h1 *ngIf="system_language == 'de'">Gas: {{accelerator.value}}{{accelerator.unit}}</h1>
+      <h1 *ngIf="system_language == 'en'">Accelerator: {{accelerator.value}}{{accelerator.unit}}</h1>
+      <div class="progress-container">
+        <div class="progress-indicator gas" style="width: {{accelerator.value}}{{accelerator.unit}}" ></div>
+      </div>
+      <h1 *ngIf="system_language == 'de'">Bremse: {{brake.value}}{{brake.unit}}</h1>
+      <h1 *ngIf="system_language == 'en'">Brake: {{brake.value}}{{brake.unit}}</h1>
+      <div class="progress-container">
+        <div class="progress-indicator brake" style="width: {{brake.value}}{{brake.unit}}" ></div>
+      </div>
+    </div>
 
+    <div class="widget-5 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Stoßdämpfer</h2>
+      <h2 *ngIf="system_language == 'en'">Shock absorber</h2>
+      <app-widget-chart-bar-shock_absorber></app-widget-chart-bar-shock_absorber>
+      <!--
+      <h1>FR: {{shockAbsorberFR.value}} {{shockAbsorberFR.unit}}</h1>
+      <h1>FL: {{shockAbsorberFL.value}} {{shockAbsorberFL.unit}}</h1>
+      <h1>RR: {{shockAbsorberRR.value}} {{shockAbsorberRR.unit}}</h1>
+      <h1>RL: {{shockAbsorberRL.value}} {{shockAbsorberRL.unit}}</h1>
+      -->
+    </div>
+
+    <div class="widget-6 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Main ECU Zustandsautomat</h2>
+      <h2 *ngIf="system_language == 'en'">Main ECU State Machine</h2>
+      <h1>{{ statemachineState.value }}</h1>
+
+      <button class="btn btn-danger" (click)="startTSButton()">TS START</button>
+    </div>
+  </div>
 </div>

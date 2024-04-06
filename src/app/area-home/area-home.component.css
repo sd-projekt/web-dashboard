@@ -1,23 +1,45 @@
-/* Grid settings, individual for each area */
-.grid {
+
+.gauge-flex-box {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.grid-total {
   margin-top: 5vh;
   width: 85vw;
   height: 90vh;
   display: grid;
   column-gap: 2vw;
   row-gap: 4vh;
+
   grid-template-areas:
-    "eins eins eins zwei zwei zwei"
-    "eins eins eins zwei zwei zwei"
-    "vier vier fuenf fuenf drei sechs"
+    "grid-group-1"
+    "grid-group-2";
 }
+
+.grid-group-1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2vw;
+  grid-template-areas: "eins zwei";
+}
+
+.grid-group-2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2vw;
+  grid-template-areas: "drei vier fuenf sechs";
+}
+
+
 /* Assignment of wdigets to the grid*/
 .widget-1 {
   grid-area: eins;
 }
 
 .widget-2 {
-  grid-area: zwei
+  grid-area: zwei;
 }
 
 .widget-3 {
@@ -30,6 +52,7 @@
 
 .widget-5 {
   grid-area: fuenf;
+  max-width: 22vw;
 }
 
 .widget-6 {

@@ -3,12 +3,26 @@ import {NgIf} from "@angular/common";
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {delay, interval, Subscription} from "rxjs";
 import {DisplayValueModel} from "../models/display-value.model";
+import {WidgetChartLineVelocityComponent} from "../widget-chart-line-velocity/widget-chart-line-velocity.component";
+import {
+  WidgetChartLineAccelerationComponent
+} from "../widget-chart-line-acceleration/widget-chart-line-acceleration.component";
+import {
+  WidgetChartBarShockAbsorberComponent
+} from "../widget-chart-bar-shock-absorber/widget-chart-bar-shock-absorber.component";
+
+import {GaugeComponent, GaugeModule} from "angular-gauge";
+import {NgxGaugeModule} from "ngx-gauge";
 
 @Component({
   selector: 'app-area-home',
   standalone: true,
   imports: [
-    NgIf
+    NgIf,
+    WidgetChartLineVelocityComponent,
+    WidgetChartLineAccelerationComponent,
+    WidgetChartBarShockAbsorberComponent,
+    NgxGaugeModule
   ],
   templateUrl: './area-home.component.html',
   styleUrls: [
@@ -17,6 +31,13 @@ import {DisplayValueModel} from "../models/display-value.model";
   ]
 })
 export class AreaHomeComponent implements OnInit, OnDestroy{
+
+  thresholdConfig_steering_wheel = {
+    '0': {color: 'green'},
+    '40': {color: 'orange'},
+    '75.5': {color: 'red'}
+  };
+
 
   // Get data from parent (surface component)
   @Input() system_language : string = '';

@@ -3,11 +3,12 @@ import {NgIf} from "@angular/common";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {interval, Subscription} from "rxjs";
 import {DisplayValueModel} from "../models/display-value.model";
+import {WidgetChartBarVoltageHvComponent} from "../widget-chart-bar-voltage-hv/widget-chart-bar-voltage-hv.component";
 
 @Component({
   selector: 'app-area-battery',
   standalone: true,
-  imports: [HttpClientModule, NgIf],
+  imports: [HttpClientModule, NgIf, WidgetChartBarVoltageHvComponent],
   templateUrl: './area-battery.component.html',
   styleUrls: [
     './area-battery.component.css',
