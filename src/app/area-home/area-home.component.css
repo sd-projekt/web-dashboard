@@ -8,7 +8,9 @@
 .grid-total {
   margin-top: 5vh;
   width: 85vw;
+  max-width: 85vw;
   height: 90vh;
+  max-height: 90vh;
   display: grid;
   column-gap: 2vw;
   row-gap: 4vh;
@@ -20,7 +22,7 @@
 
 .grid-group-1 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 2fr);
   column-gap: 2vw;
   grid-template-areas: "eins zwei";
 }
@@ -30,33 +32,44 @@
   grid-template-columns: repeat(4, 1fr);
   column-gap: 2vw;
   grid-template-areas: "drei vier fuenf sechs";
+  max-height: fit-content(70%);
+  overflow: hidden;
 }
 
 
 /* Assignment of wdigets to the grid*/
 .widget-1 {
   grid-area: eins;
+  overflow: hidden;
 }
 
 .widget-2 {
   grid-area: zwei;
+  overflow: hidden;
 }
 
 .widget-3 {
   grid-area: drei;
+  overflow: hidden;
 }
 
 .widget-4 {
   grid-area: vier;
+  overflow: hidden;
 }
 
 .widget-5 {
   grid-area: fuenf;
-  max-width: 22vw;
+  overflow: hidden;
+}
+
+.widget-5 > app-widget-chart-bar-shock_absorber {
+  max-height: 100%;
 }
 
 .widget-6 {
   grid-area: sechs;
+  overflow: hidden;
 }
 
 .progress-container {
@@ -64,7 +77,7 @@
   background-color: black;
   border-radius: 5px;
   margin: 0.5rem;
-  min-width: 375px;
+  min-width: fit-content(50%);
 }
 
 .progress-indicator {
@@ -80,29 +93,4 @@
 
 .brake {
   background-color: red;
-}
-
-/* Gauge */
-
-mwl-gauge {
-  width: 50px;
-  height: 50px;
-  display: block;
-  padding: 5px;
-}
-mwl-gauge > .gauge > .dial {
-  stroke: #eee;
-  stroke-width: 2;
-  fill: rgba(0, 0, 0, 0);
-}
-mwl-gauge > .gauge > .value {
-  stroke: rgb(47, 227, 255);
-  stroke-width: 2;
-  fill: rgba(0, 0, 0, 0);
-}
-mwl-gauge > .gauge > .value-text {
-  fill: rgb(47, 227, 255);
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 1em;
 }

@@ -23,8 +23,8 @@ export class AreaMotorComponent implements OnInit, OnDestroy{
 
   thresholdConfig_temperature = {
     '0': {color: 'green'},
-    '2500': {color: 'orange'},
-    '4000': {color: 'red'}
+    '2000': {color: 'orange'},
+    '2500': {color: 'red'}
   };
 
   // Display values (init value is always loading
