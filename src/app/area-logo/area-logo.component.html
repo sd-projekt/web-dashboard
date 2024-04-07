@@ -6,40 +6,29 @@
     <app-render-model></app-render-model>
   </div>
   <div class="widget-2 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Geolokalisierung</h2>
-    <h2 *ngIf="system_language == 'en'">Geolocation</h2>
-    <!-- String interpolation of the geolocation, identified by current public ip-->
-    <h1>{{geolocation}}</h1>
-  </div>
-  <div class="widget-3 widget flex-box">
     <h2 *ngIf="system_language == 'de'">Aktuelle Uhrzeit</h2>
     <h2 *ngIf="system_language == 'en'">Local time</h2>
     <!-- String interpolation of the time, identified by current public ip -->
     <h1>{{time}}</h1>
   </div>
+  <div class="widget-3 widget flex-box">
+    <h2 *ngIf="system_language == 'de'">Entwickler</h2>
+    <h2 *ngIf="system_language == 'en'">Developers</h2>
+    <h1>
+      Felix Kuhlmann, Leonard Voß</h1>
+  </div>
   <div class="widget-4 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">(Öffentliche) IP-Adresse</h2>
-    <h2 *ngIf="system_language == 'en'">(Public) IP address</h2>
-    <!-- String interpolation of the current public ip -->
-    <h1>{{ipaddress}}</h1>
+    <h2 *ngIf="system_language == 'de'">Softwareversion</h2>
+    <h2 *ngIf="system_language == 'en'">Software version</h2>
+    <h1>04/2024</h1>
   </div>
   <div class="widget-5 widget flex-box">
     <h2 *ngIf="system_language == 'de'">Website OWL Racing-Team</h2>
     <h2 *ngIf="system_language == 'en'">OWL Racing-Team website</h2>
     <h1>
       <!-- Button, forwarding to the official website of the OWL Racing-Team -->
-      <button type="button" class="btn btn-danger"> <a href="https://www.owl-racing-team.de/" target="_blank">Hier klicken</a></button>
+      <button type="button" class="btn btn-danger" *ngIf="system_language == 'de'"> <a href="https://www.owl-racing-team.de/" target="_blank">Hier klicken</a></button>
+      <button type="button" class="btn btn-danger" *ngIf="system_language == 'en'"> <a href="https://www.owl-racing-team.de/" target="_blank">Click here</a></button>
     </h1>
-  </div>
-  <div class="widget-6 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Softwareversion</h2>
-    <h2 *ngIf="system_language == 'en'">Software version</h2>
-    <h1>04/2024</h1>
-  </div>
-  <div class="widget-7 widget flex-box">
-    <h2 *ngIf="system_language == 'de'">Entwickler</h2>
-    <h2 *ngIf="system_language == 'en'">Developers</h2>
-    <h1>
-      Felix Kuhlmann, Leonard Voß</h1>
   </div>
 </div>

@@ -1,3 +1,9 @@
+.vertical_flex-box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4vh;
+}
+
 
 .gauge-flex-box {
   display: flex;

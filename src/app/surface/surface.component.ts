@@ -28,10 +28,13 @@ export class SurfaceComponent implements OnInit{
   // Variable to store the current menu position, Data binding from the homepage component
   @Input() nav_pointer : string = 'home';
   systemLanguage = 'de';
-  
+
+  runtime_boot : number;
+
   ngOnInit() {
     // by startup, the program shows the menu item "home"
     this.nav_pointer = 'home';
+    this.runtime_boot = Date.now();
   }
 
   updateLanguage()

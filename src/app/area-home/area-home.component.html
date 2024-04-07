@@ -60,13 +60,19 @@
       <h1>RL: {{shockAbsorberRL.value}} {{shockAbsorberRL.unit}}</h1>
       -->
     </div>
-
     <div class="widget-6 widget flex-box">
-      <h2 *ngIf="system_language == 'de'">Main ECU Zustandsautomat</h2>
-      <h2 *ngIf="system_language == 'en'">Main ECU State Machine</h2>
-      <h1>{{ statemachineState.value }}</h1>
-
-      <button class="btn btn-danger" (click)="startTSButton()">TS START</button>
+      <div class="vertical_flex-box">
+        <div>
+          <h2 *ngIf="system_language == 'de'">Main ECU Zustandsautomat</h2>
+          <h2 *ngIf="system_language == 'en'">Main ECU State Machine</h2>
+        </div>
+        <div>
+          <h1>{{ statemachineState.value }}</h1>
+        </div>
+        <div style="text-align: center;">
+          <button class="btn btn-danger" (click)="startTSButton()">TS START</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -8,9 +8,9 @@
   row-gap: 4vh;
   grid-template-areas:
     "eins eins eins eins zwei zwei"
-  "eins eins eins eins drei vier"
-  "eins eins eins eins fuenf sechs"
-  "eins eins eins eins sieben sieben";
+  "eins eins eins eins zwei zwei"
+  "eins eins eins eins vier drei"
+  "eins eins eins eins fuenf fuenf";
 }
 /* Assignment of wdigets to the grid*/
 .widget-1 {
