@@ -1,0 +1,32 @@
+<div class="grid-total">
+  <div class="grid-group-1">
+    <div class="widget-1 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Strom HV-Akku</h2>
+      <h2 *ngIf="system_language == 'en'">Current high voltage accumulator</h2>
+      <h1>{{currentHV.value}} {{currentHV.unit}}</h1>
+    </div>
+    <div class="widget-2 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Zellspannung min.</h2>
+      <h2 *ngIf="system_language == 'en'">Lowest cell voltage</h2>
+      <h1>{{lowestCellVoltage.value}} {{lowestCellVoltage.unit}}</h1>
+    </div>
+    <div class="widget-3 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Schaltzustand Schütz</h2>
+      <h2 *ngIf="system_language == 'en'">AIR state</h2>
+      <h1>{{contactorState}}</h1>
+    </div>
+  </div>
+  <div class="grid-group-2">
+    <div class="widget-4 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Spannung HV-Akku</h2>
+      <h2 *ngIf="system_language == 'en'">Voltage high voltage accumulator</h2>
+      <app-widget-chart-bar-voltage-hv></app-widget-chart-bar-voltage-hv>
+      <!--<h1>{{voltageHV.value}} {{voltageHV.unit}}</h1>-->
+    </div>
+    <div class="widget-5 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Spannung LV-Akku</h2>
+      <h2 *ngIf="system_language == 'en'">Voltage low voltage accumulator</h2>
+      <h1>{{voltageLV.value}} {{voltageLV.unit}}</h1>
+    </div>
+  </div>
+</div>

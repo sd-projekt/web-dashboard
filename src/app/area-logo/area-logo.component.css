@@ -1,0 +1,48 @@
+/* Grid settings, individual for each area */
+.grid {
+  margin-top: 5vh;
+  width: 85vw;
+  height: 90vh;
+  display: grid;
+  column-gap: 2vw;
+  row-gap: 4vh;
+  grid-template-areas:
+    "eins eins eins eins zwei zwei"
+  "eins eins eins eins zwei zwei"
+  "eins eins eins eins vier drei"
+  "eins eins eins eins fuenf fuenf";
+}
+/* Assignment of wdigets to the grid*/
+.widget-1 {
+  grid-area: eins;
+}
+
+.widget-2 {
+  grid-area: zwei
+}
+
+.widget-3 {
+  grid-area: drei;
+}
+
+.widget-4 {
+  grid-area: vier;
+}
+
+.widget-5 {
+  grid-area: fuenf;
+}
+
+.widget-6 {
+  grid-area: sechs;
+}
+
+.widget-7 {
+  grid-area: sieben;
+}
+
+/* Styling of the Google model viewer */
+model-viewer {
+  width: 100%;
+  height: 100%;
+}

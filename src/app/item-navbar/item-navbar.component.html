@@ -1,0 +1,13 @@
+<!-- If the mmenu item ist currently not selectd, load the correct icon -->
+<div (click)="clickNavItem()" *ngIf="menuState != navbar_entry?.name">
+  <img src="{{navbar_entry?.imagePath}}" alt="{{navbar_entry?.altText}}">
+</div>
+<!-- If the menu item is currently selected, load the correct icon -->
+<div (click)="clickNavItem()" *ngIf="menuState == navbar_entry?.name">
+  <img src="{{navbar_entry?.imagePathSelected}}" alt="{{navbar_entry?.altText}}">
+</div>
+
+<!-- Experimental, text description of the menu items
+<div>
+  <h2 *ngIf="navbar_entry?.name != 'Logo'">{{navbar_entry?.name}}</h2>
+</div>-->

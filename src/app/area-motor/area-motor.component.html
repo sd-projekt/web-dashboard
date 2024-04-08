@@ -1,0 +1,59 @@
+<div class="grid-total">
+  <div class="grid-group-1">
+    <div class="widget-1 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Motordrehzahlen</h2>
+      <h2 *ngIf="system_language == 'en'">Motor speed</h2>
+      <div class="vertical_flex-box">
+        <div class="gauge-flex-box">
+          <div>
+            <ngx-gauge [thick]="25" [size]="250" [margin]="10" [type]="'semi'" [label]="'Links'" [min]="0" [max]="3000"  [append]="rpmLeft.unit" [value]="rpmLeft.value" [thresholds]="thresholdConfig_temperature"></ngx-gauge>
+          </div>
+        </div>
+        <div class="gauge-flex-box">
+          <div>
+            <ngx-gauge [thick]="25" [size]="250" [margin]="10" [type]="'semi'" [label]="'Rechts'" [min]="0" [max]="3000"  [append]="rpmRight.unit" [value]="rpmRight.value" [thresholds]="thresholdConfig_temperature"></ngx-gauge>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="widget-2 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Motortemperatur</h2>
+      <h2 *ngIf="system_language == 'en'">Motor temperature</h2>
+
+      <app-widget-chart-scatter-temperature></app-widget-chart-scatter-temperature>
+
+      <!--
+      <h1>{{ temperatureLeft.value }} {{ temperatureLeft.unit }}</h1>
+      <h2 *ngIf="system_language == 'de'">Temperatur Motor rechts</h2>
+      <h2 *ngIf="system_language == 'en'">Motor temperature right</h2>
+      <h1>{{ temperatureRight.value }} {{ temperatureRight.unit }}</h1>-->
+    </div>
+  </div>
+  <div class="grid-group-2">
+    <div class="widget-3 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Temperatur KEB F6</h2>
+      <h2 *ngIf="system_language == 'en'">Temperature KEB F6</h2>
+      <h1>{{ inverterTemperature.value }} {{ inverterTemperature.unit }}</h1>
+    </div>
+    <div class="widget-4 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Fehlerzustand KEB F6</h2>
+      <h2 *ngIf="system_language == 'en'">Error state KEB F6</h2>
+      <h1 *ngIf="errorState.value == 0 && system_language == 'de'" class="no-error">Kein Fehler</h1>
+      <h1 *ngIf="errorState.value == 1 && system_language == 'de'" class="error" >Fehler</h1>
+      <h1 *ngIf="errorState.value == 0 && system_language == 'en'" class="no-error">No error</h1>
+      <h1 *ngIf="errorState.value == 1 && system_language == 'en'" class="error" >Error</h1>
+    </div>
+
+    <div class="widget-5 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Drehmoment Soll KEB F6</h2>
+      <h2 *ngIf="system_language == 'en'">Target Torque KEB F6</h2>
+      <h1>{{ targetTorque.value }} {{ targetTorque.unit }}</h1>
+    </div>
+
+    <div class="widget-6 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Zwischenkreisspannung KEB F6</h2>
+      <h2 *ngIf="system_language == 'en'">DC link voltage KEB F6</h2>
+      <h1>{{ dcLinkVoltage.value }} {{ dcLinkVoltage.unit }}</h1>
+    </div>
+  </div>
+</div>

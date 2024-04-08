@@ -1,0 +1,102 @@
+.vertical_flex-box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4vh;
+}
+
+
+.gauge-flex-box {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.grid-total {
+  margin-top: 5vh;
+  width: 85vw;
+  max-width: 85vw;
+  height: 90vh;
+  max-height: 90vh;
+  display: grid;
+  column-gap: 2vw;
+  row-gap: 4vh;
+
+  grid-template-areas:
+    "grid-group-1"
+    "grid-group-2";
+}
+
+.grid-group-1 {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  column-gap: 2vw;
+  grid-template-areas: "eins zwei";
+}
+
+.grid-group-2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2vw;
+  grid-template-areas: "drei vier fuenf sechs";
+  max-height: fit-content(70%);
+  overflow: hidden;
+}
+
+
+/* Assignment of wdigets to the grid*/
+.widget-1 {
+  grid-area: eins;
+  overflow: hidden;
+}
+
+.widget-2 {
+  grid-area: zwei;
+  overflow: hidden;
+}
+
+.widget-3 {
+  grid-area: drei;
+  overflow: hidden;
+}
+
+.widget-4 {
+  grid-area: vier;
+  overflow: hidden;
+}
+
+.widget-5 {
+  grid-area: fuenf;
+  overflow: hidden;
+}
+
+.widget-5 > app-widget-chart-bar-shock_absorber {
+  max-height: 100%;
+}
+
+.widget-6 {
+  grid-area: sechs;
+  overflow: hidden;
+}
+
+.progress-container {
+  width: auto;
+  background-color: black;
+  border-radius: 5px;
+  margin: 0.5rem;
+  min-width: fit-content(50%);
+}
+
+.progress-indicator {
+  height: 30px;
+  border-radius: 5px;
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+.gas {
+  background-color: green;
+}
+
+.brake {
+  background-color: red;
+}

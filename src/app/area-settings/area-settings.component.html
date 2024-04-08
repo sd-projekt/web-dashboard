@@ -1,0 +1,83 @@
+<div class="grid-total">
+  <div class="grid-group-1">
+    <div class="widget-1 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Systemsprache</h2>
+      <h2 *ngIf="system_language == 'en'">System language</h2>
+      <app-widget-languages [system_language]="system_language" (change)="updateLanguage()" (eventLangChanged)="selectedLanguage=$event"></app-widget-languages>
+    </div>
+    <div class="widget-2 widget flex-box">
+      <div class="vertical_flex-box">
+        <div>
+          <h2 *ngIf="system_language == 'de'">(Öffentliche) IP-Adresse</h2>
+          <h2 *ngIf="system_language == 'en'">(Public) IP address</h2>
+          <!-- String interpolation of the current public ip -->
+          <h1>{{ipaddress}}</h1>
+        </div>
+        <div>
+          <h2 *ngIf="system_language == 'de'">Geolokalisierung</h2>
+          <h2 *ngIf="system_language == 'en'">Geolocation</h2>
+          <!-- String interpolation of the geolocation, identified by current public ip-->
+          <h1>{{geolocation}}</h1>
+        </div>
+      </div>
+    </div>
+    <div class="widget-3 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Laufzeit</h2>
+      <h2 *ngIf="system_language == 'en'">Runtime</h2>
+      <h1>{{this.time}}</h1>
+    </div>
+  </div>
+  <div class="grid-group-2">
+    <div class="widget-4 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Datenbank</h2>
+      <h2 *ngIf="system_language == 'en'">Database</h2>
+      <div class="vertical_flex-box">
+        <div>
+          <h2 *ngIf="system_language == 'de'">Hostname</h2>
+          <h2 *ngIf="system_language == 'en'">Hostname</h2>
+          <h1>localhost</h1>
+        </div>
+        <div>
+          <h2 *ngIf="system_language == 'de'">Port</h2>
+          <h2 *ngIf="system_language == 'en'">Port</h2>
+          <h1>8000</h1>
+        </div>
+      </div>
+    </div>
+    <div class="widget-5 widget flex-box">
+      <h2 *ngIf="system_language == 'de'">Systemdaten</h2>
+      <h2 *ngIf="system_language == 'en'">System data</h2>
+      <div class="vertical_flex-box">
+        <div class="horizontal_flex-box">
+          <div>
+            <h2 *ngIf="system_language == 'de'">Browser</h2>
+            <h2 *ngIf="system_language == 'en'">Browser</h2>
+            <h1>{{this.system_browser}} {{this.system_browser_version}}</h1>
+          </div>
+          <div>
+            <h2 *ngIf="system_language == 'de'">Gerätetyp</h2>
+            <h2 *ngIf="system_language == 'en'">Device type</h2>
+            <h1>{{this.system_device_type}}</h1>
+          </div>
+          <div>
+            <h2 *ngIf="system_language == 'de'">Betriebssystem</h2>
+            <h2 *ngIf="system_language == 'en'">Operating system</h2>
+            <h1>{{this.system_os}} {{this.system_os_version}}</h1>
+          </div>
+        </div>
+        <div class="horizontal_flex-box">
+          <div>
+            <h2 *ngIf="system_language == 'de'">Bildschirmauflösung</h2>
+            <h2 *ngIf="system_language == 'en'">Screen resolution</h2>
+            <h1>{{this.system_screen_resolution}}</h1>
+          </div>
+          <div>
+            <h2 *ngIf="system_language == 'de'">Cookies aktiviert</h2>
+            <h2 *ngIf="system_language == 'en'">Cookies enabled</h2>
+            <h1>{{this.system_cookies}}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

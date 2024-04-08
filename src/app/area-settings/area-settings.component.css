@@ -1,0 +1,64 @@
+.horizontal_flex-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+  row-gap: 4vw;
+}
+
+.vertical_flex-box {
+  margin-top: 2vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: column;
+  row-gap: 4vh;
+}
+
+/* Grid settings, individual for each area */
+.grid-total {
+  margin-top: 5vh;
+  width: 85vw;
+  height: 90vh;
+  display: grid;
+  column-gap: 2vw;
+  row-gap: 4vh;
+
+  grid-template-areas:
+    "grid-group-1"
+    "grid-group-2";
+}
+
+.grid-group-1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2vw;
+  grid-template-areas: "eins zwei drei";
+}
+
+.grid-group-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2vw;
+  grid-template-areas: "vier fuenf";
+}
+/* Assignment of wdigets to the grid*/
+.widget-1 {
+  grid-area: eins;
+}
+
+.widget-2 {
+  grid-area: zwei
+}
+
+.widget-3 {
+  grid-area: drei;
+}
+
+.widget-4 {
+  grid-area: vier;
+}
+
+.widget-5{
+  grid-area: fuenf;
+}
