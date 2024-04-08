@@ -29,7 +29,7 @@
       <h2 *ngIf="system_language == 'en'">Steering wheel</h2>
       <div class="gauge-flex-box">
         <div>
-          <ngx-gauge [size]="180" [margin]="0" [type]="'arch'" [label]="'Winkel'" [thick]="25" [min]="0" [max]="360"  [append]="steeringAngle.unit" [value]="steeringAngle.value" [thresholds]="thresholdConfig_steering_wheel"></ngx-gauge>
+          <ngx-gauge [size]="180" [margin]="0" [type]="'arch'" [label]="'Winkel'" [thick]="25" [min]="0" [max]="360"  [append]="steeringAngle.unit" [value]="steeringAngle.value" [foregroundColor]="'#dd3333'"></ngx-gauge>
         </div>
       </div>
     </div>
@@ -50,8 +50,8 @@
     </div>
 
     <div class="widget-5 widget flex-box">
-      <h2 *ngIf="system_language == 'de'">Stoßdämpfer</h2>
-      <h2 *ngIf="system_language == 'en'">Shock absorber</h2>
+      <h2 *ngIf="system_language == 'de'" style="margin-bottom: -1vh">Stoßdämpfer</h2>
+      <h2 *ngIf="system_language == 'en'" style="margin-bottom: -1vh">Shock absorber</h2>
       <app-widget-chart-bar-shock_absorber></app-widget-chart-bar-shock_absorber>
       <!--
       <h1>FR: {{shockAbsorberFR.value}} {{shockAbsorberFR.unit}}</h1>
